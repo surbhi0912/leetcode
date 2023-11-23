@@ -9,9 +9,7 @@ public class Solution {
         board[row][col] = '.';
 
         // Recursively explore the neighbors (up, down, left, right)
-        dfs(board, row - 1, col);
         dfs(board, row + 1, col);
-        dfs(board, row, col - 1);
         dfs(board, row, col + 1);
     }
     public int countBattleships(char[][] board) {
