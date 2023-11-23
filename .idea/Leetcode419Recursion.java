@@ -15,16 +15,12 @@ public class Solution {
         dfs(board, row, col + 1);
     }
     public int countBattleships(char[][] board) {
-        int m = board.length;
-        if (m == 0) {
-            return 0;
-        }
-
-        int n = board[0].length;
+        int rowSize = board.length;
+        int colSize = board[0].length;
         int numBattleships = 0;
 
-        for (int row = 0; row < m; ++row) {
-            for (int col = 0; col < n; ++col) {
+        for (int row = 0; row < rowSize; ++row) {
+            for (int col = 0; col < colSize; ++col) {
                 if (board[row][col] == 'X') {
                     numBattleships++;  // Found a battleship, increment count
                     dfs(board, row, col);  // Recursively explore the battleship
