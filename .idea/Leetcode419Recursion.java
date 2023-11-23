@@ -1,8 +1,7 @@
-class Solution {
-    public:
-    void dfs(vector<vector<char>>& board, int i, int j) {
+public class Solution {
+    private void dfs(char[][] board, int i, int j) {
         // Base cases for recursion
-        if (i < 0 || i >= board.size() || j < 0 || j >= board[0].size() || board[i][j] == '.') {
+        if (i < 0 || i >= board.length || j < 0 || j >= board[0].length || board[i][j] == '.') {
             return;
         }
 
@@ -15,13 +14,13 @@ class Solution {
         dfs(board, i, j - 1);
         dfs(board, i, j + 1);
     }
-    int countBattleships(vector<vector<char>>& board) {
-        int m = board.size();
+    public int countBattleships(char[][] board) {
+        int m = board.length;
         if (m == 0) {
             return 0;
         }
 
-        int n = board[0].size();
+        int n = board[0].length;
         int count = 0;
 
         for (int i = 0; i < m; ++i) {
@@ -32,6 +31,7 @@ class Solution {
                 }
             }
         }
+
         return count;
     }
-};
+}
