@@ -15,14 +15,14 @@ class Solution:
 
         # Function to compute the hash of m-String
         def hash_value(string):
-            ans = 0
-            factor = 1
+            hash_ans = 0
+            multiplier = 1
 
             for i in range(m - 1, -1, -1):
-                ans += ((ord(string[i]) - 97) * (factor)) % MOD
-                factor = (factor * RADIX) % MOD
+                hash_ans += ((ord(string[i]) - 97) * (multiplier)) % MOD
+                multiplier = (multiplier * RADIX) % MOD
 
-            return ans % MOD
+            return hash_ans % MOD
 
         # Compute the hash of needle
         hash_needle = hash_value(needle)
